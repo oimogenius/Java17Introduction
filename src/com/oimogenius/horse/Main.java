@@ -24,5 +24,11 @@ public class Main {
         int kuroSpeed = kuro.speed;
         // ローカル変数はアクセスできない
 //        int num = kuro.accelerate().num1;
+
+        // 戻り値を変数に保存
+        String nickName = shiro.getNickName("っち");
+        System.out.println(nickName);
+        // 戻り値を直接使うこともできる
+        System.out.println(kuro.getNickName("たん"));
     }
 }

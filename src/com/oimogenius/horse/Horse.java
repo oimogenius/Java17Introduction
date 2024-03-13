@@ -53,4 +53,9 @@ public class Horse {
     public void printSpeed() {
         System.out.println(name + "の現在の速度：" + speed);
     }
+
+    public String getNickName(String suffix) {
+        // 名前の後ろにsuffixを付けて返却
+        return name + suffix;
+    }
 }
