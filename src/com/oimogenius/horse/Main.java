@@ -2,33 +2,18 @@ package com.oimogenius.horse;
 
 public class Main {
     public static void main(String[] args) {
+        Horse.printCount();
+
         // ウマインスタンスを作成
         Horse shiro = new Horse("シロ", 5, 10);
-        shiro.run();
-        shiro.run();
-        int hurdle = 6;
-        shiro.jump(hurdle);
-        shiro.run();
-        hurdle = 15;
-        shiro.jump(hurdle);
+        Horse.printCount();
 
         // ウマインスタンスを作成
         Horse kuro = new Horse("クロ", 3, 20);
-        kuro.run();
-        kuro.jump(hurdle);
+        Horse.printCount();
 
+        kuro.printSpeed();
         kuro.accelerate();
         kuro.decelerate();
-
-        // インスタンス変数はインスタンスを介してアクセスすることができる
-        int kuroSpeed = kuro.speed;
-        // ローカル変数はアクセスできない
-//        int num = kuro.accelerate().num1;
-
-        // 戻り値を変数に保存
-        String nickName = shiro.getNickName("っち");
-        System.out.println(nickName);
-        // 戻り値を直接使うこともできる
-        System.out.println(kuro.getNickName("たん"));
     }
 }

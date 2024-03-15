@@ -1,6 +1,9 @@
 package com.oimogenius.horse;
 
 public class Horse {
+    /*** static変数 ***/
+    public static int count = 0;
+
     /*** インスタンス変数 ***/
     public String name;
     public int speed;
@@ -16,9 +19,11 @@ public class Horse {
         this.name = name;
         this.speed = speed;
         this.jumpAbility = jumpAbility;
+        // カウントに１を足す
+        count++;
     }
 
-    /*** メソッド ***/
+    /*** インスタンスメソッド ***/
     public void run() {
         System.out.println(name + "は走った！");
     }
@@ -34,19 +39,14 @@ public class Horse {
     }
 
     public void accelerate() {
-        // ローカル変数
-        // accelerateメソッドの中でしか使えない
-        int num1 = 1;
-        // インスタンス変数はクラス内のどこでも使える
-        speed += num1;
+        // スピードを二乗する
+        speed = (int) Math.pow(speed, 2.0);
         printSpeed();
     }
 
     public void decelerate() {
-        // accelerateメソッドの外なので使えない
-//        speed -= num1;
-        int num2 = 1;
-        speed -= num2;
+        // スピードを半分にして四捨五入する
+        speed = Math.round(speed / 2.0f);
         printSpeed();
     }
 
@@ -57,5 +57,10 @@ public class Horse {
     public String getNickName(String suffix) {
         // 名前の後ろにsuffixを付けて返却
         return name + suffix;
+    }
+
+    /*** staticメソッド ***/
+    public static void printCount() {
+        System.out.println("現在のウマの数：" + count + "頭");
     }
 }
