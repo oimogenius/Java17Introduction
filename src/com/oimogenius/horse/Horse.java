@@ -9,12 +9,6 @@ public class Horse {
     public int speed;
     public int jumpAbility;
 
-    /***
-     * コンストラクタ
-     * @param name：名前
-     * @param speed：スピード
-     * @param jumpAbility：ジャンプ力
-     */
     public Horse(String name, int speed, int jumpAbility) {
         this.name = name;
         this.speed = speed;
